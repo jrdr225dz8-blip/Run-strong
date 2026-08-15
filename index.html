@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#10151d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Run Strong" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-192.svg" />
+  <link rel="icon" href="icon-192.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Run Strong</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">RUNNER STRENGTH</div>
+        <h1>Run Strong</h1>
+      </div>
+      <button id="installBtn" class="ghost hidden">Install</button>
+    </header>
+
+    <main id="app"></main>
+
+    <nav class="bottom-nav">
+      <button data-tab="today" class="nav-btn active"><span>◉</span><small>Today</small></button>
+      <button data-tab="plan" class="nav-btn"><span>▦</span><small>Plan</small></button>
+      <button data-tab="progress" class="nav-btn"><span>↗</span><small>Progress</small></button>
+      <button data-tab="recovery" class="nav-btn"><span>✦</span><small>Recovery</small></button>
+    </nav>
+  </div>
+
+  <template id="exerciseTemplate">
+    <article class="exercise-card">
+      <div class="exercise-visual"></div>
+      <div class="exercise-body">
+        <div class="exercise-title-row">
+          <div>
+            <div class="exercise-name"></div>
+            <div class="exercise-meta"></div>
+          </div>
+          <button class="info-btn">Demo</button>
+        </div>
+        <div class="set-grid"></div>
+        <div class="exercise-footer">
+          <label class="rpe-label">Effort
+            <select class="rpe-select">
+              <option value="">—</option>
+              <option value="easy">Easy</option>
+              <option value="good">Good</option>
+              <option value="hard">Hard</option>
+              <option value="pain">Pain</option>
+            </select>
+          </label>
+          <div class="next-target"></div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="demoDialog">
+    <button class="close-dialog" aria-label="Close">×</button>
+    <div id="demoContent"></div>
+  </dialog>
+
+  <dialog id="checkinDialog">
+    <form method="dialog" id="checkinForm">
+      <h2>Quick body check</h2>
+      <p class="muted">This adjusts lower-body volume before you start.</p>
+      <label>Knee pain <span id="kneeOut">0</span>/10
+        <input id="kneePain" type="range" min="0" max="10" value="0" />
+      </label>
+      <label>Calf / Achilles <span id="calfOut">0</span>/10
+        <input id="calfPain" type="range" min="0" max="10" value="0" />
+      </label>
+      <label>Overall soreness <span id="soreOut">0</span>/10
+        <input id="soreness" type="range" min="0" max="10" value="0" />
+      </label>
+      <label>Energy
+        <select id="energy">
+          <option value="5">5 — great</option>
+          <option value="4">4 — good</option>
+          <option value="3" selected>3 — okay</option>
+          <option value="2">2 — low</option>
+          <option value="1">1 — wiped</option>
+        </select>
+      </label>
+      <menu>
+        <button value="cancel" class="ghost">Cancel</button>
+        <button value="default" id="saveCheckin" class="primary">Use check-in</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

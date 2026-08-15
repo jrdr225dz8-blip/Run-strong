@@ -1,0 +1,102 @@
+
+:root{
+  --bg:#0f141b;
+  --panel:#171e27;
+  --panel2:#202936;
+  --muted:#8ea0b7;
+  --text:#f5f7fb;
+  --line:#2c3847;
+  --accent:#8f5cff;
+  --green:#6bdd53;
+  --yellow:#f6c445;
+  --orange:#ff9a2f;
+  --red:#ff6262;
+  --blue:#59a7ff;
+  --shadow:0 12px 32px rgba(0,0,0,.24);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{min-height:100vh}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.app-shell{max-width:720px;margin:0 auto;min-height:100vh;padding-bottom:94px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(15,20,27,.94);backdrop-filter:blur(14px);padding:calc(16px + env(safe-area-inset-top)) 18px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--muted);font-weight:800}
+h1{font-size:28px;margin:3px 0 0}
+h2{margin:0 0 8px}
+main{padding:18px}
+.hero{background:linear-gradient(145deg,#1b2230,#171d26);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.hero-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:#242d3a;color:#c9d5e6;font-size:12px;font-weight:800}
+.status-green{background:rgba(107,221,83,.14);color:#9df087}
+.status-yellow{background:rgba(246,196,69,.14);color:#ffd96f}
+.status-red{background:rgba(255,98,98,.14);color:#ff9393}
+.title-big{font-size:27px;font-weight:800;margin:10px 0 6px}
+.muted{color:var(--muted)}
+.schedule-row{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:16px}
+.day-pill{padding:10px 4px;border-radius:14px;background:#111821;border:1px solid var(--line);text-align:center}
+.day-pill strong{display:block;font-size:12px}
+.day-pill small{font-size:10px;color:var(--muted)}
+.day-pill.lift{border-color:#375c82;background:rgba(89,167,255,.08)}
+.day-pill.hard{border-color:#7e681f;background:rgba(246,196,69,.08)}
+.day-pill.long{border-color:#593f88;background:rgba(143,92,255,.08)}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:24px 2px 10px}
+.section-head h3{margin:0;font-size:20px}
+.section-head small{color:var(--muted)}
+.primary,.ghost,.info-btn{border-radius:12px;padding:10px 13px;border:1px solid var(--line);font-weight:750}
+.primary{background:var(--text);color:#10151d;border-color:transparent}
+.ghost{background:#151c25;color:var(--text)}
+.hidden{display:none!important}
+.exercise-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:12px}
+.exercise-visual{height:145px;background:#10161e;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.exercise-body{padding:14px}
+.exercise-title-row{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.exercise-name{font-weight:850;font-size:17px}
+.exercise-meta{color:var(--muted);font-size:12px;margin-top:4px}
+.info-btn{padding:7px 10px;background:#222b37;color:#dbe6f3}
+.set-grid{display:grid;grid-template-columns:42px 1fr 1fr 42px;gap:7px;margin-top:14px;align-items:center}
+.set-grid .hdr{color:var(--muted);font-size:11px}
+.set-grid input{width:100%;background:#0f151d;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px 8px}
+.checkset{width:38px;height:38px;border-radius:10px;background:#111821;border:1px solid var(--line);color:var(--green);font-weight:900}
+.checkset.done{background:rgba(107,221,83,.12);border-color:#437a3a}
+.exercise-footer{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:12px}
+.rpe-label{color:var(--muted);font-size:12px}
+.rpe-select{margin-left:5px;background:#0f151d;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px}
+.next-target{font-size:12px;color:#c3d0df;text-align:right}
+.subsection{background:#121922;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.subsection h4{margin:0 0 10px}
+.recovery-list,.plan-list{display:grid;gap:8px}
+.recovery-item,.plan-item{display:flex;justify-content:space-between;gap:12px;background:#18202a;padding:11px 12px;border-radius:12px;border:1px solid #273241}
+.recovery-item small,.plan-item small{color:var(--muted)}
+.complete-bar{position:sticky;bottom:88px;background:rgba(15,20,27,.92);backdrop-filter:blur(12px);padding:10px 0 2px}
+.complete-bar button{width:100%}
+.bottom-nav{position:fixed;z-index:40;bottom:0;left:50%;transform:translateX(-50%);width:min(720px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(12,17,23,.97);border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(18px)}
+.nav-btn{border:0;background:transparent;color:#72839a;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px}
+.nav-btn.active{color:var(--text)}
+.nav-btn span{font-size:20px}
+.nav-btn small{font-size:10px;font-weight:800}
+.week-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;margin-bottom:12px;overflow:hidden}
+.week-head{padding:14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.calendar-day{display:grid;grid-template-columns:60px 1fr;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.calendar-day:last-child{border-bottom:0}
+.calendar-date{color:var(--muted)}
+.event{border-left:5px solid var(--blue);background:#242d39;border-radius:10px;padding:11px 12px;font-weight:800}
+.event.hard{border-left-color:var(--yellow)}
+.event.long{border-left-color:var(--accent)}
+.event.rest{border-left-color:#607087;color:#b7c3d2}
+.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.metric{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:14px}
+.metric strong{display:block;font-size:24px;margin-top:5px}
+.log-card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:9px}
+dialog{width:min(620px,calc(100% - 28px));border:1px solid var(--line);border-radius:20px;background:#131a23;color:var(--text);padding:18px;box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+.close-dialog{float:right;border:0;background:#202936;color:white;width:34px;height:34px;border-radius:50%;font-size:24px}
+.demo-svg{width:100%;max-width:420px;height:auto;display:block;margin:10px auto;border-radius:18px;background:#0f151d;border:1px solid var(--line)}
+.cues{display:grid;gap:8px;margin-top:12px}
+.cue{background:#1a222d;border:1px solid var(--line);border-radius:11px;padding:10px}
+#checkinForm label{display:block;margin:16px 0;color:#cbd6e5}
+#checkinForm input[type=range]{width:100%}
+#checkinForm select{width:100%;margin-top:8px;background:#0f151d;color:white;border:1px solid var(--line);border-radius:10px;padding:10px}
+menu{display:flex;justify-content:flex-end;gap:8px;padding:0;margin:20px 0 0}
+.note{font-size:12px;color:var(--muted);line-height:1.45}
+@media(min-width:680px){.exercise-card{display:grid;grid-template-columns:190px 1fr}.exercise-visual{height:100%;border-bottom:0;border-right:1px solid var(--line)}}
